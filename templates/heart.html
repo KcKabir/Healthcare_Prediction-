@@ -10,9 +10,9 @@
     <header class="header">
         <h1>Heart Disease Prediction</h1>
         <nav>
-            <a href="index">Home</a>
-            <a href="diabetes">Diabetes</a>
-            <a href="parkinson">Parkinson Disease</a>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('diabetes') }}">Diabetes</a>
+            <a href="{{ url_for('parkinson') }}">Parkinson’s Disease</a>
         </nav>
     </header>
 
@@ -92,18 +92,31 @@
             </form>
         </section>
 
+        {% if result %}
+        <section class="result-section">
+            <h2>Prediction Result</h2>
+            <div class="result-box {{ result_class }}">
+                {{ result }}
+            </div>
+        </section>
+        {% endif %}
+
+        <br>
+        <br>
+
         <section class="plot-section">
             <h2 class="title">Model Insight</h2>
+            <br>
             <div class="plot-grid">
 
                 <div class="plot-card">
                     <h3>Confusion Matrix</h3>
-                    <img src="{{ cm_plot }}" alt="Confusion Matrix">
+                    <img src="{{ url_for('plots', filename='heartdisease_cm.png') }}" alt="Confusion Matrix">
                 </div>
 
                 <div class="plot-card">
                     <h3>Feature Importance</h3>
-                    <img src="{{ fi_plot }}" alt="Feature Importance">
+                    <img src="{{ url_for('plots', filename='heartdisease_features.png') }}" alt="Feature Importance">
                 </div>
 
             </div>

@@ -35,9 +35,7 @@ def diabetes():
         features = [float(x) for x in request.form.values()]
         final_input = scalar_diabetes.transform([features])
         prediction = model_diabetes.predict(final_input)[0]
-        print("User input:", features)
-        print("Model prediction:", prediction)
-         
+        
         if prediction == 1:
             result = "Diabetes Detected"
             result_class = "result-bad"
@@ -59,8 +57,6 @@ def heart():
         features = [float(x) for x in request.form.values()]
         final_inputer = scalar_heart.transform([features])
         prediction = model_heart.predict(final_inputer)[0]
-        print("User input:", features)
-        print("Model prediction:", prediction)
         
         if prediction == 1:
             result = "Heart Detected"
@@ -83,8 +79,6 @@ def parkinson():
         features = [float(x) for x in request.form.values()]
         final_input = scalar_parkinsons.transform([features])
         prediction = model_parkinsons.predict(final_input)[0]
-        print("User input:", features)
-        print("Model prediction:", prediction)
         
         if prediction == 1:
             result = "Parkinson Detected"
@@ -101,4 +95,3 @@ def parkinson():
 if __name__ == "__main__":
     app.run(debug=True)
     
-

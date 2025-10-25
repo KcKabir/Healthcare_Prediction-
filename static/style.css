@@ -137,6 +137,7 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: background 0.3s ease;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -307,3 +308,28 @@ select:focus {
         padding: 1.5rem;
     }
 }
+/* Result Section */
+.result-section {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.result-box {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    color: white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.result-good {
+    background-color: #28a745; /* green */
+}
+
+.result-bad {
+    background-color: #dc3545; /* red */
+}
+
