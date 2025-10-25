@@ -63,11 +63,11 @@ def heart():
         print("Model prediction:", prediction)
         
         if prediction == 1:
-            result = "Heart Detected"
-            result_class = "result-bad"
-        else:
-            result = "No Heart Detected"
+            result = "No Heart disease Detected"
             result_class = "result-good"
+        else:
+            result = "Heart Disease Detected"
+            result_class = "result-bad"
         
     cm_plot = r'healthcare_project\plots\heartdisease_cm.png'
     fi_plot = r'healthcare_project\plots\heartdisease_features.png'
@@ -83,8 +83,6 @@ def parkinson():
         features = [float(x) for x in request.form.values()]
         final_input = scalar_parkinsons.transform([features])
         prediction = model_parkinsons.predict(final_input)[0]
-        print("User input:", features)
-        print("Model prediction:", prediction)
         
         if prediction == 1:
             result = "Parkinson Detected"
